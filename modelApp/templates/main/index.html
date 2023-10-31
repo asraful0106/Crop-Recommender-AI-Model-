@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.10.0/dist/full.css" rel="stylesheet">
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    
+    <style>
+        .imagesOfBackground {
+            background-image: url("{% static 'images/crop.jpg' %}");
+        }
+    </style>
+</head>
+
+<body class="imagesOfBackground bg-no-repeat bg-cover min-h-screen">
+    <div class="navbar bg-base-100 mb-6">
+        <a class="btn btn-ghost normal-case text-xl">CROP AI</a>
+    </div>
+    <div class="flex items-center justify-center">
+        <form action="result" id="number-form" class="w-full max-w-md p-6 bg-white bg-opacity-50 rounded-lg shadow-lg">
+            <div class="mb-4">
+                <input type="number" name="nitrogen" step="0.01" placeholder="Nitrogen - Measured in Kg/Ha" required
+                    class="input input-primary input-bordered w-full" />
+            </div>
+            <div class="mb-4">
+                <input type="number" name="phosphorus" step="0.01" placeholder="Phosphorus - Measured in Kg/Ha" required
+                    class="input input-primary input-bordered w-full" />
+            </div>
+            <div class="mb-4">
+                <input type="number" name="potassium" step="0.01" placeholder="Potassium - Measured in Kg/Ha" required
+                    class="input input-primary input-bordered w-full" />
+            </div>
+            <div class="mb-4">
+                <input type="number" name="ph" step="0.01" placeholder="ph - Range 0-14" required
+                    class="input input-primary input-bordered w-full" />
+            </div>
+            <div class="mb-4">
+                <input type="number" name="electricalonductivity"
+                step="0.01" placeholder="electrical_conductivity - Measured in dS/m" required
+                    class="input input-primary input-bordered w-full" />
+            </div>
+            <div class="mb-4">
+                <input type="number" name="sulphur" step="0.01" placeholder="Sulphar - Measured in percentage(%)" required
+                    class="input input-primary input-bordered w-full" />
+            </div>
+            <div class="mb-4">
+                <input type="number" name="copper" step="0.01" placeholder="Copper - Measured in PPM(Parts Per Million)" required
+                    class="input input-primary input-bordered w-full" />
+            </div>
+            <div class="mb-4">
+                <input type="number" name="iron" step="0.01" placeholder="Iron - Measured in ppm(Parts Per Million)" required
+                    class="input input-primary input-bordered w-full" />
+            </div>
+            <div class="mb-4">
+                <input type="number" name="manganese" step="0.01" placeholder="Manganese - Measured in ppm" required
+                    class="input input-primary input-bordered w-full" />
+            </div>
+            <div class="mb-4">
+                <input type="number" name="zinc" step="0.01" placeholder="Zinc - Measured in ppm" required
+                    class="input input-primary input-bordered w-full" />
+            </div>
+            <div class="mb-4">
+                <input type="number" name="boron" step="0.01" placeholder="Boron - Measured in ppm" required
+                    class="input input-primary input-bordered w-full" />
+            </div>
+            <button type="submit" class="btn w-full">Predict</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    
+    <style>
+        .imagesOfBackground {
+            background-image: url("{% static 'images/crop.jpg' %}");
+        }
+    </style>
+</head>
+
+<body class="imagesOfBackground bg-no-repeat bg-cover min-h-screen">
+    <div class="min-h-screen flex justify-center items-center bg-white bg-opacity-50">
+        <div>
+            <h1 class="text-4xl font-bold mb-4 text-black">Crop Recommendation Result</h1>
+            <div class="bg-white shadow-md rounded p-8">
+                <p class="text-lg font-semibold mb-2 text-black">Recommended Crop:</p>
+                <p id="recommended-crop" class="text-black">{{result}}</p>
+            </div>
+
+            <div class="flex justify-center items-center mt-4"> <button class="btn text-white"
+                    id="predict-again-button">Predict Again</button>
+
+                <script>
+                    // JavaScript to add a "Predict Again" behavior to the button
+                    document.getElementById('predict-again-button').addEventListener('click', function () {
+                        history.back();
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
